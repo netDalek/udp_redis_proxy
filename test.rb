@@ -38,7 +38,7 @@ Redis::Connection.drivers << Redis::Connection::Udp
 redis1 = Redis.new(driver: :ruby, lost: "127.0.0.1", port: 6379)
 redis2 = Redis.new(lost: "127.0.0.1", port: 8789)
 
-COUNT = 1000
+COUNT = 10000
 
 puts "Ruby driver"
 redis1.set "test1", 0
