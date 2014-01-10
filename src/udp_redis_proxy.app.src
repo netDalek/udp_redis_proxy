@@ -1,0 +1,12 @@
+{application, udp_redis_proxy,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { udp_redis_proxy_app, []}},
+  {env, []}
+ ]}.
