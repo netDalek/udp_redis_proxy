@@ -7,7 +7,8 @@ start_link() ->
 
 loop() ->
   lager:info("Starting udp server"),
-  {ok, Socket} = gen_udp:open(8789, [list, {active,true}]),
+  Port = application:get_env(udp_port),
+  {ok, Socket} = gen_udp:open(Port, [list, {active,true}]),
   loop({Socket, 0}).
 
 loop({Socket, I}) ->

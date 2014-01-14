@@ -23,7 +23,9 @@ start_link() ->
 %% ===================================================================
 
 init([]) ->
-    {ok, { {one_for_one, 5, 60}, [
+    MaxRestart = 5,
+    MaxTime = 60,
+    {ok, { {one_for_one, MaxRestart, MaxTime}, [
         ?CHILD(udp_server, worker),
         ?CHILD(redis_server, worker)
         ]} }.

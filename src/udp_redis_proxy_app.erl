@@ -9,7 +9,7 @@
 %% Application callbacks
 %% ===================================================================
 
-start(_StartType, _StartArgs) ->
+start(normal, _StartArgs) ->
     lager:start(),
     udp_redis_proxy_sup:start_link().
 
